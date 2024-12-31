@@ -87,7 +87,7 @@
         <div id="advice" class="advice"></div>
     </div>
     <div class="credits">
-        Website created by Ragavendran
+        A webpage by Ragav
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -120,11 +120,11 @@
 
                 // Display a random quote
                 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                quoteDiv.innerHTML = `🌟 Quote: "${randomQuote}"`;
+                quoteDiv.innerHTML = `🌟 "${randomQuote}"`;
 
                 // Display a random advice
                 const randomAdvice = advices[Math.floor(Math.random() * advices.length)];
-                adviceDiv.innerHTML = `🌈 Advice: "${randomAdvice}"`;
+                adviceDiv.innerHTML = `🌈 "${randomAdvice}"`;
             } else {
                 greetingDiv.innerHTML = 'Please enter your name!';
                 quoteDiv.innerHTML = '';
