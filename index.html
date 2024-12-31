@@ -15,7 +15,7 @@
             overflow-x: hidden; /* Prevent scrollbars from confetti */
         }
         .container {
-            margin-top: 20%;
+            margin-top: 10%;
         }
         h1 {
             font-size: 3rem;
@@ -43,6 +43,11 @@
             margin-top: 20px;
             font-size: 1.5rem;
         }
+        .quote, .advice {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #fff5e1;
+        }
         .credits {
             margin-top: 50px;
             font-size: 0.9rem;
@@ -57,6 +62,8 @@
         <input type="text" id="nameInput" placeholder="Your Name">
         <button onclick="displayGreeting()">Submit</button>
         <div id="greeting" class="greeting"></div>
+        <div id="quote" class="quote"></div>
+        <div id="advice" class="advice"></div>
     </div>
     <div class="credits">
         A webpage by Ragav
@@ -64,15 +71,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
+        const quotes = [
+            "Every new day is a chance to change your life.",
+            "Happiness is not by chance, but by choice.",
+            "Dream big and dare to fail.",
+            "The best way to predict the future is to create it.",
+            "Life is short. Make it sweet and meaningful."
+        ];
+
+        const advices = [
+            "Keep smiling, it's the key to a happy heart.",
+            "Take small steps every day towards your dream.",
+            "Spread love, kindness, and positivity wherever you go.",
+            "Believe in yourself, you are capable of amazing things.",
+            "Stay grateful, for gratitude brings abundance."
+        ];
+
         function displayGreeting() {
             const name = document.getElementById('nameInput').value;
             const greetingDiv = document.getElementById('greeting');
+            const quoteDiv = document.getElementById('quote');
+            const adviceDiv = document.getElementById('advice');
 
             if (name.trim() !== '') {
                 greetingDiv.innerHTML = `🎉 Happy New Year, ${name}! 🎊`;
                 startConfetti();
+
+                // Display a random quote
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                quoteDiv.innerHTML = `🌟 "${randomQuote}"`;
+
+                // Display a random advice
+                const randomAdvice = advices[Math.floor(Math.random() * advices.length)];
+                adviceDiv.innerHTML = `🌈 "${randomAdvice}"`;
             } else {
                 greetingDiv.innerHTML = 'Please enter your name!';
+                quoteDiv.innerHTML = '';
+                adviceDiv.innerHTML = '';
             }
         }
 
